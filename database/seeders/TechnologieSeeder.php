@@ -7,7 +7,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Str;
 
-class TagSeeder extends Seeder
+class TechnologieSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -33,8 +33,6 @@ class TagSeeder extends Seeder
             $newTechnologie = new Technologie();
             $newTechnologie->name = $name;
             $newTechnologie->save();
-            $newTechnologie->slug= Str::slug( $newTechnologie->id . ' ' . $newTechnologie->name);
-            $newTechnologie->update();
         }
 
     }

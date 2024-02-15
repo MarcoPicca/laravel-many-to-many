@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\Technologie;
 
 class DatabaseSeeder extends Seeder
 {
@@ -18,13 +19,12 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
-
        
         $this->call([
             TypeDetailSeeder::class,
             TypeSeeder::class,
-            TechnologieSeeder::class,
             ProjectSeeder::class,
+            TechnologieSeeder::class,
         ]);
         
     }
