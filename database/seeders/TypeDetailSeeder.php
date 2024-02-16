@@ -22,7 +22,7 @@ class TypeDetailSeeder extends Seeder
         foreach ($typeIds as $typeId) {
             $typeDetail = new TypeDetail();
             $typeDetail->type_id = $typeId;
-            $typeDetail->description = $faker->unique()->realText(400);
+            $typeDetail->description = $faker->realText(20);
             $typeDetail->save();
         }
     }

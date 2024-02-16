@@ -21,10 +21,11 @@ class DatabaseSeeder extends Seeder
         // ]);
        
         $this->call([
-            TypeDetailSeeder::class,
             TypeSeeder::class,
+            TypeDetailSeeder::class,
             ProjectSeeder::class,
             TechnologieSeeder::class,
+            ProjectTechnologieSeeder::class,
         ]);
         
     }

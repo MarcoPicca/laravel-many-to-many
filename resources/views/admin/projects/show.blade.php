@@ -16,6 +16,21 @@
                 {{ $project->title }}
             </h2>
 
+            <ul>
+                @forelse ($project->technologies as $technologie)
+                    <li class="d-inline me-3">
+                        <span class="badge px-2 px-1">
+                            {{ $technologie->name }}
+                        </span>
+                    </li>
+
+                @empty
+                    <li class="d-inline me-3">
+                        This post has no tags yet...
+                    </li>
+                @endforelse
+            </ul>
+
             <img src="{{ $project->image_url }}" alt="">
 
             <p>
