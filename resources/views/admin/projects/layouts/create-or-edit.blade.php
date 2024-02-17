@@ -20,7 +20,30 @@
                     <input class="form-control" type="text" name="title" id="title" value="{{ old('title') }}">
                 </div>
 
-                
+                <div class="mb-3 input-group">
+                    <div>
+                        @foreach ( $technologies as $technologie )
+                            <input class="form-check-input" type="checkbox" name="technologies[]" id="technologies-{{ $technologie->id }}" value="{{ $technologie->name }}"
+                            {{-- ? se la technologie su cui sto ciclando e' presente nei ttechnologies che ho inviato e ora voglio rivedere come errore, selezionalo, se invece non ho avuto alcun errore, cercalo all\' interno della lista dei tag presenti nel mio post --}}
+                            {{ in_array( $technologie->id, old('technologies', $project->technologies->pluck('id')->toArray())) ? 'checked' : '' }}>
+
+                            <label for="technologies-{{ $technologie->id }}"> {{ $technologie->name }}</label>
+                        @endforeach
+                    </div>
+                </div> 
+
+
+                <div class="mb-3 input-group">
+                    <label for="type_id" class="input-group-text">Tipo:</label>
+                    <select class="form-select" type="text" name="type_id" id="type_id" >
+                        @foreach ( $types as $type )
+                            <option value="{{ $type->id }}"
+                                {{ $type->id == old('type_id', $project->type_id) ? 'selected' : '' }}>
+                                    {{ $type->name }}
+                            </option>
+                        @endforeach
+                    </select>
+                </div>
 
                 
 
